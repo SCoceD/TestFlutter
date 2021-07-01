@@ -19,7 +19,8 @@ class Counter extends StatefulWidget {
 
 class _CounterState extends State<Counter> {
   Random random = new Random(); // random generator
-  int colorOne = 0; // variable for contain random number, from this number get random color
+  // variables for contain random number, from this number get random color
+  int colorOne = 0;
   int colorSecond = 0;
   int colorThird = 0;
   // method for make new random color
