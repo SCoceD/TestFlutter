@@ -41,6 +41,7 @@ class _CounterState extends State<Counter> {
         child: Container(
           child: Center(child: Text('Hey there',
             style: TextStyle(
+              color: Colors.white,
               fontSize: 25, // Text size
             ),
           ),
