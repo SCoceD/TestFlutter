@@ -18,17 +18,16 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  List colors = [
-    Colors.red,
-    Colors.green,
-    Colors.yellow
-  ]; // list of colors for realize random color
   Random random = new Random(); // random generator
-  int color =
-      0; // variable for contain random number, from this number get random color
+  // variables for contain random number, from this number get random color
+  int colorOne = 0;
+  int colorSecond = 0;
+  int colorThird = 0;
   // method for make new random color
-  void changeIndex() {
-    setState(() => color = random.nextInt(3));
+  void changeColor() {
+    setState(() => colorOne = random.nextInt(256));
+    setState(() => colorSecond = random.nextInt(256));
+    setState(() => colorThird = random.nextInt(256));
   }
 
   @override
@@ -37,7 +36,7 @@ class _CounterState extends State<Counter> {
       child: GestureDetector(
         onTap: () {
           // This method while be called whet tap in random places on the screen
-          changeIndex();
+          changeColor();
         },
         child: Container(
           child: Center(child: Text('Hey there',
@@ -48,10 +47,10 @@ class _CounterState extends State<Counter> {
           ),
           decoration: BoxDecoration(
             shape: BoxShape.rectangle, // set form for container;
-            color: colors[color], // set random color
+            color: Color.fromRGBO(colorOne, colorSecond,colorThird, 1.0), // set random color
           ),
-          width: 3810.0,
-          height: 3810.0,
+          width: 6016.0,
+          height: 3384.0,
         ),
       ),
     );
